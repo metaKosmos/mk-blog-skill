@@ -1,0 +1,8 @@
+# Dependencia minima do cliente da skill blog-mk.
+#
+# certifi: bundle de certificados CA. Necessario porque o Python do python.org no
+# macOS nao usa o keychain do sistema, causando CERTIFICATE_VERIFY_FAILED nas
+# chamadas HTTPS (login Google + broker). Pure-data, sem compilacao.
+#
+# Todo o resto usa a biblioteca padrao (urllib, json, http.server, webbrowser).
+certifi>=2024.2.2

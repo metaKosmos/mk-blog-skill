@@ -1,0 +1,17 @@
+{
+  "name": "blog-mk",
+  "version": "4.1.2",
+  "description": "Redator senior do blog metaKosmos: gera/reescreve artigos no tom mK (anti-IA, GEO/AEO, self-audit) e publica como rascunho no blog via broker autenticado por email mK.",
+  "author": {
+    "name": "metaKosmos",
+    "email": "david@metakosmos.com.br"
+  },
+  "homepage": "https://github.com/metaKosmos/mk-blog-skill",
+  "keywords": [
+    "blog",
+    "wordpress",
+    "content",
+    "marketing",
+    "metakosmos"
+  ]
+}

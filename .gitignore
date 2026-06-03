@@ -1,0 +1,30 @@
+# Credenciais — NUNCA commitar
+.env
+.env.*
+*.env
+**/secrets/**
+*-key.json
+service-account*.json
+
+# Output de artigos (gerado por usuario, nao versionar)
+output/
+**/output/
+
+# Cache de auth (ID token local do usuario)
+.blog-mk-auth.json
+**/.blog-mk-auth.json
+
+# Estado de execucao / eval com dados (gerado em runtime)
+references/_eval_queue.json
+references/_eval_results.json
+references/_seo_updates.json
+references/sync-cron.log
+**/__pycache__/
+*.pyc
+
+# Python venv
+.venv/
+venv/
+
+# OS
+.DS_Store

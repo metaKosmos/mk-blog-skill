@@ -1,0 +1,18 @@
+{
+  "name": "mk-skills",
+  "owner": {
+    "name": "metaKosmos",
+    "email": "david@metakosmos.com.br"
+  },
+  "metadata": {
+    "description": "Marketplace de skills internas da metaKosmos.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "blog-mk",
+      "source": "./plugins/blog-mk",
+      "description": "Gera artigos no tom editorial da metaKosmos e publica como rascunho no blog, com autenticacao por email mK (credenciais ficam no GCP, nunca na maquina)."
+    }
+  ]
+}
