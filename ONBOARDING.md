@@ -15,11 +15,11 @@ Tempo: ~5 minutos, uma vez só.
    - **Claude Code** (terminal)
    - **Claude Cowork**
 2. **Python 3** instalado (no Mac geralmente já vem; se não, baixe em python.org).
-3. **Acesso ao repositório** no GitHub `metaKosmos/mk-blog-skill` (o David te adiciona).
-   Você precisa estar logado no GitHub na sua máquina. Se nunca usou, no terminal rode:
-   `gh auth login` (ou peça ajuda ao David/Tiago uma vez).
-4. **Seu email `@metakosmos.com.br`** precisa estar na lista de quem pode publicar
+3. **Seu email `@metakosmos.com.br`** precisa estar na lista de quem pode publicar
    (hoje: David, Patrick, João, Tales). Se não estiver, peça ao David para incluir.
+
+Não precisa de conta no GitHub: o repositório é público, então o comando de
+instalação funciona direto.
 
 ---
 
@@ -73,8 +73,9 @@ O Claude te devolve o link do rascunho no fim.
   liberado. Peça ao Claude: "refaz meu login do blog". Se persistir, fale com o David
   para confirmar seu email na lista.
 - **Erro de certificado / SSL** → peça ao Claude: "roda o setup da skill do blog".
-- **O comando `/plugin` não encontra o repositório** → você ainda não tem acesso ao
-  GitHub `metaKosmos/mk-blog-skill` ou não está logado no GitHub. Fale com o David.
+- **O comando `/plugin` não encontra o repositório** → confira se digitou exatamente
+  `metaKosmos/mk-blog-skill` (com o K maiúsculo em Kosmos). O repo é público, não
+  precisa de conta no GitHub.
 
 ---
 

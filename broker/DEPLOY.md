@@ -118,17 +118,27 @@ gcloud functions describe blog-broker --gen2 --region=$REGION --format='value(se
 
 ---
 
-## 5. Configurar a skill com a URL e o client OAuth
+## 5. Configurar OAuth e a URL do broker
 
-Em `plugins/blog-mk/skills/blog-mk/scripts/config.py`, preencha:
-- `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` (do passo 3)
-- `BROKER_URL` (do passo 4)
+**O repo é PÚBLICO.** Por isso o `client_secret` do OAuth NÃO fica no repo: ele é
+servido pelo broker no endpoint `/oauth-config`, e o cliente (`config.py
+get_oauth_client()`) busca em tempo de uso. Então:
 
-Ou via variáveis de ambiente (sem editar o arquivo):
-`BLOG_MK_GOOGLE_CLIENT_ID`, `BLOG_MK_GOOGLE_CLIENT_SECRET`, `BLOG_MK_BROKER_URL`.
+- No **broker**, defina as env vars no deploy (passo 4):
+  - `OAUTH_CLIENT_ID` = client_id do passo 3 (também valida a audiência do token)
+  - `OAUTH_CLIENT_SECRET` = client_secret do passo 3
+  ```bash
+  gcloud functions deploy blog-broker --gen2 --region=$REGION \
+    --update-env-vars="OAUTH_CLIENT_SECRET=GOCSPX-..."
+  ```
+- No **cliente** (`config.py`), só fica `BROKER_URL` (não-secreto). Nada de
+  client_id/secret hardcoded. Override opcional por env: `BLOG_MK_BROKER_URL`,
+  `BLOG_MK_GOOGLE_CLIENT_ID`, `BLOG_MK_GOOGLE_CLIENT_SECRET`.
 
-Faça commit dos valores **não-secretos** (client_id de app instalado e BROKER_URL
-são ok no repo privado). Bump o `VERSION`/`plugin.json` e push.
+> Se trocar/rotacionar o client OAuth, basta atualizar `OAUTH_CLIENT_ID` e
+> `OAUTH_CLIENT_SECRET` no broker e redeployar — o cliente pega sozinho.
+
+Bump o `VERSION`/`plugin.json` + `SKILL_VERSION` do broker e push.
 
 ---
 
